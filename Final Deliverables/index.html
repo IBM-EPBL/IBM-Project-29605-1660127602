@@ -1,0 +1,173 @@
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Job Recommender </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">		
+	</head>
+	<body>
+		<center><h1>Job Recommender</h1></center>
+		<a href="{{ url_for('logout') }}" class="btn-primary" style="float: right;margin-top: -40px;"><button>logout</button></a>
+		<section class="text-center">
+			<!-- Background image -->
+			<div class="p-5 bg-image" style="
+				  background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+				  height: 300px;
+				  "></div>
+			<!-- Background image -->
+		  
+			<div class="card mx-4 mx-md-5 shadow-5-strong" style="
+				  margin-top: -100px;
+				  background: hsla(0, 0%, 100%, 0.8);
+				  backdrop-filter: blur(30px);
+				  ">
+			  <div class="card-body py-5 px-md-5">
+				<h1 class="bottom">
+					Hi {{session.username}}!!			
+				</h1><br>
+				<div class="row d-flex justify-content-center">
+					
+				  <div class="col-lg-8">
+					<center>
+						  <div class="d-flex flex-row align-items-center justify-content-center" style="border: 1px solid grey; padding: 10px;border-radius: 10px;background-color: rgb(40,40,40);color: white">
+					  <p class="lead fw-normal mb-0 me-3">Take test now</p>
+					  <br>
+					</div>
+					  </center>
+					  <br>
+					<form action="{{ url_for('check') }}" method="post">
+					  <!-- 2 column grid layout with text inputs for the first and last names -->
+					  
+					  
+		  
+					  <!-- Email input -->
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">1. How do you work better?</label><br>
+							<input type="radio" id="html" name="one" value="2">
+							  <label for="html">with a person or two</label>
+							  <input type="radio" id="css" name="one" value="1">
+							  <label for="css">in a group</label><br>
+							  <input type="radio" id="javascript" name="one" value="3">
+							  <label for="javascript">single</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">2. Which one do you prefer?</label><br>
+							<input type="radio" id="html" name="two" value="3">
+							  <label for="html">to learn something new all times</label>
+							  <input type="radio" id="css" name="two" value="2">
+							  <label for="css">to always promote at work</label><br>
+							  <input type="radio" id="javascript" name="two" value="1">
+							  <label for="javascript">to work a little and to have a free time</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">3. What is your talent?</label><br>
+							<input type="radio" id="html" name="three" value="1">
+							  <label for="html">to write, to find solutions, to see in perspective</label>
+							  <input type="radio" id="css" name="three" value="3">
+							  <label for="css">artistic talents</label><br>
+							  <input type="radio" id="javascript" name="three" value="2">
+							  <label for="javascript">to think practically, to take easy decisions</label>
+					  </div>
+
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">4. pick a quality that you have?</label><br>
+							<input type="radio" id="html" name="four" value="2">
+							  <label for="html">stress resistant</label>
+							  <input type="radio" id="css" name="four" value="1">
+							  <label for="css">hardworking</label><br>
+							  <input type="radio" id="javascript" name="four" value="3">
+							  <label for="javascript">very creative</label>
+					  </div>
+					  
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">5. With which do you relate better?</label><br>
+							<input type="radio" id="html" name="five" value="3">
+							  <label for="html">yourself</label>
+							  <input type="radio" id="css" name="five" value="2">
+							  <label for="css">people</label><br>
+							  <input type="radio" id="javascript" name="five" value="1">
+							  <label for="javascript">animals</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">6. Your dream profession is?</label><br>
+							<input type="radio" id="html" name="six" value="1">
+							  <label for="html">to help people with your work</label>
+							  <input type="radio" id="css" name="six" value="3">
+							  <label for="css">to be a star</label><br>
+							  <input type="radio" id="javascript" name="six" value="2">
+							  <label for="javascript">to do something extraordinary</label>
+					  </div>
+					  
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">7. Your best grades are?</label><br>
+							<input type="radio" id="html" name="sev" value="2">
+							  <label for="html">Exact Sciences</label>
+							  <input type="radio" id="css" name="sev" value="1">
+							  <label for="css">literature, psychology, foriegn language</label><br>
+							  <input type="radio" id="javascript" name="sev" value="3">
+							  <label for="javascript">sports, painting, music</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">8. pick a profession goal?</label><br>
+							<input type="radio" id="html" name="eig" value="3">
+							  <label for="html">to invent someting</label>
+							  <input type="radio" id="css" name="eig" value="2">
+							  <label for="css">to make money</label><br>
+							  <input type="radio" id="javascript" name="eig" value="1">
+							  <label for="javascript">to do what you love</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">9. pick a activity you like?</label><br>
+							<input type="radio" id="html" name="nine" value="1">
+							  <label for="html">to play a classic game</label>
+							  <input type="radio" id="css" name="nine" value="3">
+							  <label for="css">to read what you like</label><br>
+							  <input type="radio" id="javascript" name="nine" value="2">
+							  <label for="javascript">to see a documentary</label>
+					  </div>
+
+					  <div class="form-outline mb-4">
+						
+						<label class="form-label" for="form3Example1">10. Pick a topic you like?</label><br>
+							<input type="radio" id="html" name="ten" value="2">
+							  <label for="html">genetics</label>
+							  <input type="radio" id="css" name="ten" value="1">
+							  <label for="css">Foriegn literature</label><br>
+							  <input type="radio" id="javascript" name="ten" value="3">
+							  <label for="javascript">Acting</label>
+					  </div>
+		  
+			
+					  <button type="submit" class="btn btn-primary btn-block mb-4">
+						check
+					  </button>
+					  
+						</form>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+
+			  
+		  </body>
+		  </html>
+		
+

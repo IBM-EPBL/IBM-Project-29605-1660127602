@@ -1,0 +1,75 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Job Recommender </title>	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+	</head>
+	<center><h1>Job Recommender</h1></center>
+	<section class="text-center">
+		<!-- Background image -->
+		<div class="p-5 bg-image" style="
+			  background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+			  height: 300px;
+			  "></div>
+		<!-- Background image -->
+	  
+		<div class="card mx-4 mx-md-5 shadow-5-strong" style="
+			  margin-top: -100px;
+			  background: hsla(0, 0%, 100%, 0.8);
+			  backdrop-filter: blur(30px);
+			  ">
+			  
+		  <div class="card-body py-5 px-md-5">
+			  <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin-left:430px">
+				<form id="{{ url_for('login') }}" method="post">
+				  <center>
+					  <div class="d-flex flex-row align-items-center justify-content-center" style="border: 1px solid grey; padding: 10px;border-radius: 10px;background-color: rgb(40,40,40);color: white">
+				  <p class="lead fw-normal mb-0 me-3">User Login</p>
+				  <br>
+				</div>
+				  </center>
+				  <br>
+				  <div class="msg">{{ msg }}</div>
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+					<input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+					placeholder="Enter a valid email address" required/>
+				</div>
+	  
+				<!-- Password input -->
+				<div class="form-outline mb-3">
+				  <input type="password" id="form3Example4" name="password" class="form-control form-control-lg"
+					placeholder="Enter password" required/>
+				</div>
+	  
+				<div class="d-flex justify-content-between align-items-center">
+				  <!-- Checkbox -->
+				  <div class="form-check mb-0">
+					<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+					<label class="form-check-label" for="form2Example3">
+					  Remember me
+					</label>
+				  </div>
+				  <a href="#!" class="text-body">Forgot password?</a>
+				</div>
+				<br>
+				<button onclick="return validate()" type="submit" class="btn btn-primary btn-block mb-4">
+					Login
+				  </button>
+	  
+				<div class="text-center text-lg-start mt-4 pt-2">
+					<p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="{{url_for('register')}}"
+					  class="link-danger">Sign Up</a></p>
+				</div>
+	  
+			  </form>
+				
+			</div>
+		  
+		  </section>
+		  
+	  </body>
+	  </html>
+	

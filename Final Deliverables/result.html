@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Job Recommender </title>	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+	</head>
+
+	<center><h1>Job Recommender</h1>
+		<a href="{{ url_for('logout') }}" class="btn-primary" style="float: right;margin-top: -40px;"><button>logout</button></a>
+
+        <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+        <br>
+        <h1 class="bottom">
+            Hi {{session.username}}!!			
+        </h1><br>
+    <h3>Your results are in!!!!</h3><br><br>
+    <center>
+    <div class="card" style="width: 500px;">
+        <div class="card-body">
+            {{ msg }}
+        </div>
+      </div>
+    </center>
+      <div class="text-center text-lg-start mt-4 pt-2">
+        <p class="small fw-bold mt-2 pt-1 mb-0">Take test again <a href="{{url_for('back')}}"
+            class="link-success">click me!!</a></p>
+
+          </div>
+    <br><br>
+    </center>
